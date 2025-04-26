@@ -1,17 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './pages/LoginPage';
+import WelcomePage from './pages/WelcomePage';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <div className='flex justify-center'>
-     <h1 className='text-lg '>Fitness Website Initial Commit</h1>
-     </div>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/welcome" element={<WelcomePage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
